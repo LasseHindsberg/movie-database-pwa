@@ -1,0 +1,19 @@
+.info {
+    display: flex;
+}
+
+.left,.right {
+    min-width: 45vw;
+    max-width: 50vw;
+    margin: 15px;
+    margin-top: 20px;
+}
+
+.info__info {
+    padding: 5px;
+    border-bottom: thin solid rgba(14, 14, 14, 0.1);
+}
+
+.info__img {
+    max-width: 100%;
+}

@@ -1,0 +1,23 @@
+.search__searchBar {
+    width: 60%;
+    margin-left: auto;
+    display: flex;
+}
+
+.search__search {
+    margin-left: 20px;
+}
+
+.search__submit {
+    height: 32px;
+}
+
+.search__card {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px;
+}
+
+.search__media {
+    max-width: 200px;
+}

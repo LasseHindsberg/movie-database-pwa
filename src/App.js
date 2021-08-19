@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from 'react';
+import './App.scss';
+import SearchContext from './components/Searchcontext';
+import { Router } from '@reach/router';
+import Index from './views/Index';
+import Movie from './views/Movie';
+import PageNotFound from './views/404';
 
 function App() {
+  var searchState = useState([]);
+
+  useEffect(function () {
+    Notification.requestPermission(function(status) {
+      console.log('Notification permission status:', status);
+  });
+  }, [])
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <SearchContext.Provider value={searchState}>
+      <div className="app">
+        <Router>
+          <Index exact path="/" />
+          <Movie exact path="/movie/:id" />
+          <PageNotFound path="*" />
+        </Router>
+      </div>
+    </SearchContext.Provider>
   );
 }
 
