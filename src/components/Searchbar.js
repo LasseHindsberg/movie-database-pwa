@@ -43,7 +43,6 @@ export default function Searchbar() {
                 color="secondary"
                 className="search__submit"
                 type="submit"
-                
             >
                 Search
             </Button>

@@ -5,6 +5,7 @@ import { Router } from '@reach/router';
 import Index from './views/Index';
 import Movie from './views/Movie';
 import PageNotFound from './views/404';
+import LampConfig from './views/LampConfig';
 
 function App() {
   var searchState = useState([]);
@@ -22,6 +23,7 @@ function App() {
           <Index exact path="/" />
           <Movie exact path="/movie/:id" />
           <PageNotFound path="*" />
+          <LampConfig exact path="/config"/>
         </Router>
       </div>
     </SearchContext.Provider>
